@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title> 3L: LEARN, LEAD, LEVEL UP! </title>
+<link rel="icon" type="image/jpeg" href="3L web.jpeg">
+
+<style>
+/* --- SAME CSS, WALANG BINAGO --- */
+body{margin:0;font-family:Arial,sans-serif;background:#e8f5e9;}
+header{background:#4caf50;color:white;text-align:center;padding:15px;}
+ul.nav{list-style:none;display:flex;justify-content:center;margin:0;padding:0;background:#1b5e20;}
+ul.nav li{position:relative;}
+ul.nav li a{display:block;padding:14px 18px;color:white;text-decoration:none;font-weight:bold;}
+ul.nav li a:hover{background:#4caf50;}
+.dropdown-content{display:none;position:absolute;top:100%;left:0;background:#c8e6c9;min-width:230px;z-index:999;}
+.dropdown-content li a{color:#1b5e20;}
+.dropdown:hover .dropdown-content{display:block;}
+.container{display:flex;}
+.sidebar{width:25%;background:#1b5e20;padding:15px;}
+.sidebar ul{list-style:none;padding:0;}
+.sidebar li a{display:block;padding:10px;color:white;text-decoration:none;font-weight:bold;}
+.sidebar li a:hover{background:#4caf50;}
+article{width:75%;background:white;padding:20px;min-height:520px;}
+button{padding:8px 12px;margin:5px;background:#4caf50;color:white;border:none;cursor:pointer;border-radius:4px;}
+button:hover{background:#1b5e20;}
+.game-box{border:2px solid #4caf50;padding:15px;margin:15px 0;border-radius:6px;}
+input[type=text]{padding:6px;width:150px;}
+footer{background:#1b5e20;color:white;text-align:center;padding:10px;}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1 style="font-size:80px; margin:0;"> 3L </h1>
+    <h2 style="font-size: 30px;"> Learn, Lead, Level Up!</h2>
+<p style="font-size:18px";>Matatag ang Batang Santo, Siguradong Matalino!</p>
+</header>
+
+<ul class="nav">
+<li class="dropdown"><a href="#" onclick="loadContent('home')">Home</a>
+  <ul class="dropdown-content">
+    <li><a href="#" onclick="loadContent('mission')">Mission</a></li>
+    <li><a href="#" onclick="loadContent('vision')">Vision</a></li>
+    <li><a href="#" onclick="loadContent('cv')">Core Values</a></li>
+  </ul>
+</li>
+
+<li class="dropdown"><a href="#">Activities</a>
+  <ul class="dropdown-content">
+    <li><a href="#" onclick="loadContent('activity1')">Week 1</a></li>
+    <li><a href="#" onclick="loadContent('activity2')">Week 2</a></li>
+    <li><a href="#" onclick="loadContent('activity3')">Week 3</a></li>
+    <li><a href="#" onclick="loadContent('activity4')">Week 4</a></li>
+    <li><a href="#" onclick="loadContent('activity5')">Week 5</a></li>
+  </ul>
+</li>
+
+<li class="dropdown"><a href="#">Assessments</a>
+  <ul class="dropdown-content">
+    <li><a href="#" onclick="loadContent('assessment1')">Week 1</a></li>
+    <li><a href="#" onclick="loadContent('assessment2')">Week 2</a></li>
+    <li><a href="#" onclick="loadContent('assessment3')">Week 3</a></li>
+    <li><a href="#" onclick="loadContent('assessment4')">Week 4</a></li>
+    <li><a href="#" onclick="loadContent('assessment5')">Week 5</a></li>
+  </ul>
+</li>
+
+<li class="dropdown"><a href="#">References</a>
+  <ul class="dropdown-content">
+    <li><a href="#" onclick="loadContent('ref1')">Week 1</a></li>
+    <li><a href="#" onclick="loadContent('ref2')">Week 2</a></li>
+    <li><a href="#" onclick="loadContent('ref3')">Week 3</a></li>
+    <li><a href="#" onclick="loadContent('ref4')">Week 4</a></li>
+    <li><a href="#" onclick="loadContent('ref5')">Week 5</a></li>
+  </ul>
+</li>
+
+<li class="dropdown"><a href="#">About</a>
+  <ul class="dropdown-content">
+    <li><a href="#" onclick="loadContent('about')">Group Members</a></li>
+  </ul>
+</li>
+</ul>
+
+<div class="container">
+
+<nav class="sidebar">
+<ul>
+  <li><a href="#" onclick="loadContent('content')">Content</a></li>
+  <li><a href="#" onclick="loadContent('performance')">Performance Standard</a></li>
+  <li><a href="#" onclick="loadContent('contentstandard')">Content Standard</a></li>
+  <li><a href="#" onclick="loadContent('competencies')">Learning Competencies</a></li>
+  <li><a href="#" onclick="loadContent('objectives')">Objectives</a></li>
+</ul>
+</nav>
+
+<article id="content">
+  <h2>Welcome, Batang Santo!</h2>
+  <p>
+    Batang Santo likas na mabait, matalino, at aktibo.<br>
+    School for talented students.
+  </p>
+
+  <h2>About 3L</h2>
+  <p>
+    3L is a digital learning platform designed for Grade 7 students of Santo Domingo.
+    It provides interactive activities, games, and assessments to help learners
+    grow academically and improve their learning in technology.
+  </p>
+</article>
+
+</div>
+
+<footer>
+<p>&copy; ICT Batch 2025–2026 | 3L Educational Platform</p>
+</footer>
+
+<script>
+let score=0;
+function resetScore(){score=0;}
+function correct(){score++;alert("✅ Correct! Score: "+score);}
+function wrong(){alert("❌ Try again!");}
+function flip(card){card.classList.toggle("flipped");}
+
+function loadContent(section){
+event.preventDefault();
+const c=document.getElementById("content");
+
+if(section==="home"){location.reload();}
+
+else if (section === 'mission') {
+        content.innerHTML = `
+           <h2 style="color:maroon">Mission</h2>
+         <p>To protect and promote the right of every Filipino to quality, equitable, culture-based, and complete basic education where: <br>
+Students learn in a child-friendly, gender-sensitive, safe, and motivating environment.<br>
+Teachers facilitate learning and constantly nurture every learner.
+Administrators and staff, as stewards of the institution, ensure an enabling and supportive environment for effective learning to happen.<br>
+Family, community, and other stakeholders are actively engaged and share responsibility for developing life-long learners.</p>
+            `;}
+
+else if (section === 'vision') {
+        content.innerHTML = `
+            <h2 style="color:maroon">Vision</h2>
+         <p>We dream of Filipinos
+who passionately love their country
+and whose values and competencies
+enable them to realize their full potential and contribute meaningfully to building the nation.<br>
+
+As a learner-centered public institution,
+the Department of Education
+continuously improves itself
+to better serve its stakeholders.</p>
+            `;}
+
+else if (section === 'cv') {
+        content.innerHTML = `
+            <h2 style="color:maroon">Deped Core Values</h2
+           <p>Maka-Diyos<br>
+              Maka-Tao<br>
+              Maka-Kalikasan<br>
+              Maka-Bansa</p>          
+            `;}
+
+else if (section === 'content') {
+        content.innerHTML = `
+            <h2> Content </h2>
+            <h3 style="font-style: italic; font-weight:bold;">  </h3>
+            <p> Sectors of ICT and Its Career and Business Opportunities</p>
+<ul>
+<li>computer programming programmer/web and game developer</li>
+<li>visual arts - animator/illustrator/ graphic designer</li>
+<li>computer system servicing -computer/ Network technician</li>
+<li>telecommunication - call center agents/ outbound and inbound agents/contact center services</li>
+</ul>
+             <hr>
+             <p>Trends and Issues in ICT</p>
+             <hr>
+             <p>Qualities of Successful Entrepreneurs in the Field of ICT</p>
+             <hr>
+             <p>Occupational Safety and Health (OHS) Standards in ICT</p>
+<ul>
+<li>hazards and risks management 
+<li>5s (sort, standardize, set in order, shine, sustain) •safety regulations
+</li>
+</ul>
+              <hr>
+              <p>Computer Number Systern:</p>
+<ul>
+<li>binary 
+<li>octal
+<li>decimal
+<li>hexadecimal
+</li></ul>
+               <hr>
+               <p>Conversion of Computer Numbes Systems</p>
+<ul>
+<li>binary 
+<li>octal
+<li>decimal
+<li>hexadecimal
+</li></ul>    
+           `;}
+
+else if (section === 'performance') {
+        content.innerHTML = `
+            <h2> Performance Standard</h2>
+            <p>Word Processing Software</p>
+<ul>
+<li>page breaks
+<li>auto tables of contents
+<li>mail merge
+<li>references
+<hr> 
+              <p>Presentation Software</p>
+<li>rules in creating presentations 
+<li>master slide 
+<li>animation (motion path)
+<li>animation pane 
+<li>hyperlink 
+<li>action buttons
+<hr>
+            <p>Spreadsheet Software</p>
+<li>conditional formatting functions •data analysis 
+</li></ul>
+            `;}
+
+else if (section === 'contentstandard') {
+        content.innerHTML = `
+            <h2> Content Standard</h2>
+            <p>The learners demonstrate an understanding of ICT sectors,
+as well as the potential career and business
+opportunities these sectors offer in relation to
+their chosen career in the future</p>
+<hr style="margin:0;">           
+            <p>The learners demonstrate an understanding of current trends and emerging issues in ICT</p>
+<hr style="margin:0;">
+            <p>The learners demonstrate an understanding of the qualities of successful in the field of ICT</p>
+<hr style="margin:0;">
+            <p>The learners demonstrate an understanding of the Occupational Safety and Health (OSH) standards in ICT environments</p>
+<hr style="margin:0;">
+            <p>The learners demonstrate an understanding of the computer number systems</p>
+            `;}
+
+else if (section === 'competencies') {
+        content.innerHTML = `
+            <h2> Learning Competencies</h2>
+            <ol style="list-style-type: decimal";>
+<li>The learners analyze the various sectors of ICT
+and evaluate the potential career
+and business prospects relevant to
+their future career choices
+<hr>
+<li>The learners discuss the emerging trends and issues in ICT
+<hr>
+<li>The learners discuss the qualities of successful entrepreneurs in the field of ICT
+<hr>
+<li>The learners discuss Occupational Safety and Health (OSH) standards in ICT environments
+<hr>
+<li>The learners differentiate the various computer number systems</li>
+            `;}
+
+
+else if (section === 'objectives') {
+        content.innerHTML = `
+            <h2> Objectives</h2>
+            <p>The learners will be able to identify and describe the key sectors of Information and Communications Technology (ICT). They will evaluate the career and business opportunities within each ICT sector aligned with their interests and skills, and explain how this understanding empowers them to make informed decisions about their future career paths.</p>
+            `;}
+
+else if (section === 'ref1') {
+        content.innerHTML = `
+            <h2> Reference: Week 1</h2>
+<h1>Reference for the Week 1 Lessons, Activities, and Assessment.</h1>
+<a href="https://docs.google.com/presentation/d/1kUdl6FEoXpQ2hKCPkV_yP_fhWiOjI2T8/edit?usp=drivesdk&ouid=107534797659814573225&rtpof=true&sd=true">Week 1: Sectors of ICT</a>
+            `;}
+
+else if (section === 'ref2') {
+        content.innerHTML = `
+            <h2> Reference: Week 2</h2> 
+<h1>Reference for the Week 2 Lessons, Activities, and Assessment.</h1>
+<a href="https://docs.google.com/presentation/d/1qaoYBOLqIgpeoLegQwc4Inx0T0SkZAw3/edit?usp=drivesdk&ouid=107534797659814573225&rtpof=true&sd=true">Week 2: Qualities of Successful Entrepreneur</a><br><br>
+<a href="https://docs.google.com/presentation/d/15DMIiA8qe_7UhKSNFJT34wqj9Q6K4jN_/edit?usp=drivesdk&ouid=107534797659814573225&rtpof=true&sd=true">Week 2: OHS</a>
+            `;}
+
+else if (section === 'ref3') {
+        content.innerHTML = `
+            <h2> Reference: Week 3</h2> 
+<h1>Reference for the Week 3 Lessons, Activities, and Assessment.</h1>
+<a href="https://docs.google.com/presentation/d/1ScKI70DiuBHQs46RbFDyYCYGoxOMiFPL/edit?usp=drivesdk&ouid=107534797659814573225&rtpof=true&sd=true">Week 3: Binary</a><br><br>
+<a href="https://docs.google.com/presentation/d/1ECZy7C1MdLoyBjfCVV-AveyYnTzMH7e2/edit?usp=drivesdk&ouid=107534797659814573225&rtpof=true&sd=true">Week 3: Octal</a>
+            `;}
+
+else if (section === 'ref4') {
+        content.innerHTML = `
+            <h2> Reference: Week 4</h2>
+<h1>Reference for the Week 4 Lessons, Activities, and Assessment.</h1>
+<a href="https://docs.google.com/presentation/d/1l9DgALLzIWBxMklga4bUqRE5owozDgwN/edit?usp=drivesdk&ouid=107534797659814573225&rtpof=true&sd=true">Week 4</a>
+            `;}
+
+else if (section === 'ref5') {
+        content.innerHTML = `
+            <h2> Reference: Week 5</h2> 
+<h1>Reference for the Week 5 Lessons, Activities, and Assessment.</h1>
+<a href="https://docs.google.com/presentation/d/19IKmAhZ6-DnOmrWzJ854pgLbXqz2R9j6/edit?usp=drivesdk&ouid=107534797659814573225&rtpof=true&sd=true">Week 5 - Part 1</a><br><br>
+<a href="https://docs.google.com/presentation/d/10JPUJasPZs515GL93XTZub3H6XkSEPHU/edit?usp=drivesdk&ouid=107534797659814573225&rtpof=true&sd=true">Week 5 - Part 2</a>
+            `;}
+
+/* ================= ACTIVITIES ================= */
+
+  /* ACTIVITY 1 – MIXED QUIZ (5 QUESTIONS) */
+  else if(section==="activity1"){
+    resetScore();
+    c.innerHTML=`
+    <h2>Week 1 – ICT Sectors</h2>
+
+    <div class="game-box">
+      <p>1. Which sector focuses on coding?</p>
+      <button onclick="correct()">Computer Programming</button>
+      <button onclick="wrong()">Telecommunication</button>
+      <button onclick="wrong()">Visual Arts</button>
+    </div>
+
+    <div class="game-box">
+      <p>2. Who designs logos?</p>
+      <button onclick="correct()">Graphic Designer</button>
+      <button onclick="wrong()">Network Technician</button>
+    </div>
+
+    <div class="game-box">
+      <p>3. Which job belongs to Telecommunication?</p>
+      <button onclick="correct()">Call Center Agent</button>
+      <button onclick="wrong()">Animator</button>
+    </div>
+
+    <div class="game-box">
+      <p>4. True or False: Programmers fix printers.</p>
+      <button onclick="wrong()">True</button>
+      <button onclick="correct()">False</button>
+    </div>
+
+    <div class="game-box">
+      <p>5. Type the sector for animators:</p>
+      <input id="a1">
+      <button onclick="
+        document.getElementById('a1').value.toLowerCase().includes('visual')
+        ? correct() : wrong()
+      ">Submit</button>
+    </div>
+    `;
+  }
+
+  /* ACTIVITY 2 – FLASHCARDS */
+  else if(section==="activity2"){
+    c.innerHTML=`
+    <h2>Week 2 – ICT Careers (Flashcards)</h2>
+    <p>Click the cards to flip 👇</p>
+
+    <div class="game-box" onclick="flip(this)">
+      <b>Programmer</b>
+      <p class="answer">Writes computer code</p>
+    </div>
+
+    <div class="game-box" onclick="flip(this)">
+      <b>Animator</b>
+      <p class="answer">Creates animations</p>
+    </div>
+
+    <div class="game-box" onclick="flip(this)">
+      <b>Technician</b>
+      <p class="answer">Fixes hardware</p>
+    </div>
+
+    <div class="game-box" onclick="flip(this)">
+      <b>Graphic Designer</b>
+      <p class="answer">Designs visuals</p>
+    </div>
+
+    <div class="game-box" onclick="flip(this)">
+      <b>Call Center Agent</b>
+      <p class="answer">Handles customer calls</p>
+    </div>
+
+    <style>
+      .answer{display:none;}
+      .flipped .answer{display:block;}
+      .flipped b{display:none;}
+    </style>
+    `;
+  }
+
+  else if(section==="activity3"){
+  resetScore();
+  c.innerHTML=`
+  <h2>Week 3 – ICT Jobs & Roles</h2>
+
+  <div class="game-box">
+    <p>1. What does a Programmer do?</p>
+    <button onclick="correct()">Writes code</button>
+    <button onclick="wrong()">Answers phone calls</button>
+    <button onclick="wrong()">Designs posters</button>
+  </div>
+
+  <div class="game-box">
+    <p>2. Who creates animations?</p>
+    <button onclick="wrong()">Technician</button>
+    <button onclick="correct()">Animator</button>
+    <button onclick="wrong()">Call Center Agent</button>
+  </div>
+
+  <div class="game-box">
+    <p>3. Which job repairs computers?</p>
+    <button onclick="wrong()">Graphic Designer</button>
+    <button onclick="correct()">Computer Technician</button>
+    <button onclick="wrong()">Programmer</button>
+  </div>
+
+  <div class="game-box">
+    <p>4. Graphic Designers belong to which sector?</p>
+    <button onclick="correct()">Visual Arts</button>
+    <button onclick="wrong()">Telecommunication</button>
+    <button onclick="wrong()">Computer Programming</button>
+  </div>
+
+  <div class="game-box">
+    <p>5. Type the job that answers customer calls:</p>
+    <input id="w3">
+    <button onclick="
+      document.getElementById('w3').value.toLowerCase().includes('call')
+      ? correct() : wrong()
+    ">Submit</button>
+  </div>
+  `;
+}
+
+  /* ACTIVITY 4 – SCENARIO GAME */
+  else if(section==="activity4"){
+    c.innerHTML=`
+    <h2>Week 4 – OHS Safety Scenarios</h2>
+
+    <div class="game-box">
+      <p>1. You see exposed wires.</p>
+      <button onclick="correct()">Report it</button>
+      <button onclick="wrong()">Ignore it</button>
+    </div>
+
+    <div class="game-box">
+      <p>2. Your eyes hurt from screen.</p>
+      <button onclick="correct()">Take a break</button>
+      <button onclick="wrong()">Continue using</button>
+    </div>
+
+    <div class="game-box">
+      <p>3. Spilled water near computer.</p>
+      <button onclick="correct()">Turn off device</button>
+      <button onclick="wrong()">Keep using</button>
+    </div>
+
+    <div class="game-box">
+      <p>4. Proper sitting posture?</p>
+      <button onclick="correct()">Straight back</button>
+      <button onclick="wrong()">Slouching</button>
+    </div>
+
+    <div class="game-box">
+      <p>5. Why is OHS important?</p>
+      <button onclick="correct()">For safety</button>
+      <button onclick="wrong()">For decoration</button>
+    </div>
+    `;
+  }
+
+  /* ACTIVITY 5 – MINI CROSSWORD (SIMPLE) */
+  else if(section==="activity5"){
+    c.innerHTML=`
+    <h2>Week 5 – Mini Crossword</h2>
+
+    <div class="game-box">
+      <p>1. Binary digit (0 or 1)</p>
+      <input id="c1">
+    </div>
+
+    <div class="game-box">
+      <p>2. Sector for coding</p>
+      <input id="c2">
+    </div>
+
+    <div class="game-box">
+      <p>3. Fixes computers</p>
+      <input id="c3">
+    </div>
+
+    <div class="game-box">
+      <p>4. Creates animation</p>
+      <input id="c4">
+    </div>
+
+    <div class="game-box">
+      <p>5. ICT stands for?</p>
+      <input id="c5">
+    </div>
+
+ <button onclick="
+      document.getElementById('c1').value.toLowerCase()=='bit' &&
+      document.getElementById('c2').value.toLowerCase().includes('program') &&
+      document.getElementById('c3').value.toLowerCase().includes('technician') &&
+      document.getElementById('c4').value.toLowerCase().includes('animator') &&
+      document.getElementById('c5').value.toLowerCase().includes('information')
+      ? alert('🎉 Crossword Complete!')
+      : alert('❌ Check your answers')
+    ">Check Answers</button>
+    `;
+  }
+
+else if(section==="assessment1"){
+  resetScore();
+  c.innerHTML=`
+  <h2>Assessment Week 1 – Web & ICT Basics</h2>
+  <p>Choose the correct answer. Each correct answer earns 1 point.</p>
+
+  <div class="game-box">
+    <p>1. What does HTML stand for?</p>
+    <button onclick="correct()">Hyper Text Markup Language</button>
+    <button onclick="wrong()">Hyper Text Makeup Language</button>
+    <button onclick="wrong()">Hyperlinks Text Markup Language</button>
+  </div>
+
+  <div class="game-box">
+    <p>2. Which language is commonly used with HTML and CSS?</p>
+    <button onclick="correct()">JavaScript</button>
+    <button onclick="wrong()">Python</button>
+    <button onclick="wrong()">C++</button>
+  </div>
+
+  <div class="game-box">
+    <p>3. Which language creates the structure of web pages?</p>
+    <button onclick="correct()">HTML</button>
+    <button onclick="wrong()">JavaScript</button>
+    <button onclick="wrong()">PHP</button>
+  </div>
+
+  <div class="game-box">
+    <p>4. What tool is used to edit photos?</p>
+    <button onclick="correct()">Adobe Photoshop</button>
+    <button onclick="wrong()">Microsoft Word</button>
+    <button onclick="wrong()">AutoCAD</button>
+  </div>
+
+  <div class="game-box">
+    <p>5. Mr. Manuel is a graphic illustrator. His ICT sector is:</p>
+    <button onclick="correct()">Visual Arts</button>
+    <button onclick="wrong()">Programming</button>
+    <button onclick="wrong()">Telecommunication</button>
+  </div>
+
+  <p><b>Quiz Complete!</b> Check your alerts for score.</p>
+  `;
+}
+
+else if(section==="assessment2"){
+  resetScore();
+  c.innerHTML=`
+  <h2>Assessment Week 2 – ICT Entrepreneur Qualities</h2>
+
+  <div class="game-box">
+    <p>1. Setting long-term goals and adjusting plans means:</p>
+    <button onclick="correct()">Visionary Leadership</button>
+    <button onclick="wrong()">Risk-Taking</button>
+    <button onclick="wrong()">Customer Focus</button>
+  </div>
+
+  <div class="game-box">
+    <p>2. Understanding the market and finances is called:</p>
+    <button onclick="correct()">Business Acumen</button>
+    <button onclick="wrong()">Technical Proficiency</button>
+    <button onclick="wrong()">Innovation</button>
+  </div>
+
+  <div class="game-box">
+    <p>3. Designing user-friendly products for customers is:</p>
+    <button onclick="correct()">Customer Focus</button>
+    <button onclick="wrong()">Risk-Taking</button>
+    <button onclick="wrong()">Adaptability</button>
+  </div>
+
+  <div class="game-box">
+    <p>4. Launching a new app despite competition shows:</p>
+    <button onclick="correct()">Risk-Taking</button>
+    <button onclick="wrong()">Avoidance</button>
+    <button onclick="wrong()">Fear</button>
+  </div>
+
+  <div class="game-box">
+    <p>5. Adjusting to new technologies means:</p>
+    <button onclick="correct()">Adaptability</button>
+    <button onclick="wrong()">Stubbornness</button>
+    <button onclick="wrong()">Rigidity</button>
+  </div>
+  `;
+}
+
+else if(section==="assessment3"){
+  c.innerHTML=`
+  <h2>Assessment Week 3 – Decimal to Octal</h2>
+  <p>Type your answers then submit.</p>
+
+  <div class="game-box">
+    <p>1. 165 (Decimal → Octal)</p>
+    <input id="o1">
+  </div>
+
+  <div class="game-box">
+    <p>2. 251 (Decimal → Octal)</p>
+    <input id="o2">
+  </div>
+
+  <div class="game-box">
+    <p>3. 398 (Decimal → Octal)</p>
+    <input id="o3">
+  </div>
+
+  <button onclick="
+    document.getElementById('o1').value=='245' &&
+    document.getElementById('o2').value=='373' &&
+    document.getElementById('o3').value=='616'
+    ? alert('🎉 All Correct!')
+    : alert('❌ Check your answers')
+  ">Submit</button>
+  `;
+}
+
+else if(section==="assessment4"){
+  resetScore();
+  c.innerHTML=`
+  <h2>Assessment Week 4 – ICT & OHS</h2>
+
+  <div class="game-box">
+    <p>1. Who creates websites?</p>
+    <button onclick="correct()">Web Developer</button>
+    <button onclick="wrong()">Animator</button>
+    <button onclick="wrong()">Call Center Agent</button>
+  </div>
+
+  <div class="game-box">
+    <p>2. Designs characters and effects:</p>
+    <button onclick="correct()">Animator</button>
+    <button onclick="wrong()">Technician</button>
+    <button onclick="wrong()">Programmer</button>
+  </div>
+
+  <div class="game-box">
+    <p>3. Why is OSH important?</p>
+    <button onclick="correct()">Worker safety</button>
+    <button onclick="wrong()">Long screen time</button>
+    <button onclick="wrong()">More workload</button>
+  </div>
+
+  <div class="game-box">
+    <p>4. Which uses only 0 and 1?</p>
+    <button onclick="correct()">Binary</button>
+    <button onclick="wrong()">Decimal</button>
+    <button onclick="wrong()">Roman</button>
+  </div>
+
+  <div class="game-box">
+    <p>5. Call center agents belong to:</p>
+    <button onclick="correct()">Telecommunication</button>
+    <button onclick="wrong()">Visual Arts</button>
+    <button onclick="wrong()">Programming</button>
+  </div>
+  `;
+}
+
+else if(section==="assessment5"){
+  resetScore();
+  c.innerHTML=`
+  <h2>Assessment Week 5 – Number Systems</h2>
+
+  <div class="game-box">
+    <p>1. Which uses digits 0 and 1?</p>
+    <button onclick="correct()">Binary</button>
+    <button onclick="wrong()">Decimal</button>
+    <button onclick="wrong()">Octal</button>
+  </div>
+
+  <div class="game-box">
+    <p>2. Base of decimal system?</p>
+    <button onclick="correct()">10</button>
+    <button onclick="wrong()">2</button>
+    <button onclick="wrong()">8</button>
+  </div>
+
+  <div class="game-box">
+    <p>3. Highest digit in octal?</p>
+    <button onclick="correct()">7</button>
+    <button onclick="wrong()">8</button>
+    <button onclick="wrong()">9</button>
+  </div>
+
+  <div class="game-box">
+    <p>4. Letter C in hexadecimal equals:</p>
+    <button onclick="correct()">12</button>
+    <button onclick="wrong()">10</button>
+    <button onclick="wrong()">13</button>
+  </div>
+
+  <div class="game-box">
+    <p>5. Why is hexadecimal preferred?</p>
+    <button onclick="correct()">Easier to read</button>
+    <button onclick="wrong()">More digits</button>
+    <button onclick="wrong()">Only math</button>
+  </div>
+
+  <p><b>Assessment Complete!</b></p>
+  `;
+}
+
+else if (section === 'about') {
+        content.innerHTML = `     
+            <h3>You can know more about us  through our FB/IG accounts below and you can message us if you have any questions. Below is the members of the program 3L: Learn, Lead, Level Up!</h3>
+            <p>Princess Judiva P  Casalme</p><a href="https://www.instagram.com/juduivva?igsh=MjdjMWNnODk4NXhh">IG ACCOUNT: juduivva</a> <br>
+            <p>Jeahzell Pearl M. Sore</p><a href="https://www.instagram.com/bobapiyorl?igsh=cWd0cmxlazYwOXg0">IG ACCOUNT: bobapiyorl</a><br>
+            <p>Dianne D. Enriquez</p><a href="https://www.instagram.com/dyaeiou_?igsh=dWxkM21yYWdkMHZ0">IG ACCOUNT: dyaeiou</a><br>
+            <p>J-rose Alimpuyo</p><a href="https://www.instagram.com/j_gsrose15?igsh=cXY3bzcwMnhobXNj">IG ACCOUNT: j_gsrose15</a><br>
+            <p>Cyril Bukas</p><a href="https://www.instagram.com/yeacyea?igsh=MTlnbzEzbHdlOW5mbQ==">IG ACCOUNT: yeacyea</a><br>
+            <p>Our Email Adress</p><a href="mailto:ictpulag@gmail.com">Mail to: ictpulag@gmail.com</a>
+            `;} 
+
+else if (section === 'logo') {
+        content.innerHTML = `     
+             <img src="3L web.jpeg" alt="3L Logo" style="width: 300px; height: 300px; display: block; margin: 0 auto;">
+              `;}
+
+
+}
+</script>
+</body>
+</html>
